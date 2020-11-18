@@ -81,6 +81,7 @@ public class NetworkingRequest: NSObject {
                         var error = NetworkingError(errorCode: httpURLResponse.statusCode)
                         if let json = try? JSONSerialization.jsonObject(with: data, options: []) {
                             error.jsonPayload = json
+                            print(error.jsonPayload)
                         }
                         throw error
                     }
